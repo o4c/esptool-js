@@ -1,0 +1,76 @@
+// ./esptool.py -t erase_flash
+
+Uploading stub...
+// MEM_BEGIN
+TRACE +0.000 command op=0x05 data len=16 wait_response=1 timeout=3.000 data=a81f0000 02000000 00180000 00e01040
+TRACE +0.000 Write 26 bytes:
+    c000051000000000 00a81f0000020000 | ................
+    000018000000e010 40c0             | ........@.
+TRACE +0.026 Read 1 bytes: c0
+TRACE +0.000 Read 11 bytes: 010502007fcf5c000000c0
+TRACE +0.000 Received full packet: 010502007fcf5c000000
+
+// MEM_DATA
+TRACE +0.001 command op=0x07 data len=6160 wait_response=1 timeout=3.000 data=
+    0018000000000000 0000000000000000 | ................
+    a810004001ffff46 740000009081ff3f | ...@...Ft......?
+    0801ff3f80800000 8480000040400000 | ...?........@@..
+    .....
+    ff2a39bd024733ef 3167fa2d0e426131 | .*9..G3.1g.-.Ba1
+
+TRACE +0.589 Read 1 bytes: c0
+TRACE +0.000 Read 11 bytes: 010702007fcf5c000000c0
+TRACE +0.000 Received full packet: 010702007fcf5c000000
+
+// MEM_DATA
+TRACE +0.001 command op=0x07 data len=1976 wait_response=1 timeout=3.000 data=
+    a807000001000000 0000000000000000 | ................
+    6261357261338261 32b2613645740031 | ba5ra3.a2.a6Et.1
+    61faed022d0fc573 00422131722133b2 | a...-..s.B!1r!3.
+    ....
+    0032a10c020df000                  | .2......
+TRACE +0.209 Read 1 bytes: c0
+TRACE +0.000 Read 11 bytes: 010702007fcf5c000000c0
+TRACE +0.000 Received full packet: 010702007fcf5c000000
+
+// MEM_BEGIN
+TRACE +0.000 command op=0x05 data len=16 wait_response=1 timeout=3.000 data=0003000 00100000 00018000 0a8acff3f
+TRACE +0.026 Read 1 bytes: c0
+TRACE +0.000 Read 11 bytes: 010502007fcf5c000000c0
+TRACE +0.000 Received full packet: 010502007fcf5c000000
+
+// MEM_DATA
+TRACE +0.000 command op=0x07 data len=784 wait_response=1 timeout=3.000 data=
+    0003000000000000 0000000000000000 | ................
+    0881fe3f05050400 0203070003030b00 | ...?............
+    51e7104087e71040 b5e7104054e81040 | Q..@...@...@T..@
+    ....
+    0e010f0001010000 0100000004000000 | ................
+TRACE +0.095 Read 1 bytes: c0
+TRACE +0.000 Read 11 bytes: 010702007fcf5c000000c0
+TRACE +0.000 Received full packet: 010702007fcf5c000000
+
+Running stub...
+// MEM_END
+TRACE +0.000 command op=0x06 data len=8 wait_response=1 timeout=0.050 data=0000000004e01040
+TRACE +0.000 Write 18 bytes:
+    c000060800000000 000000000004e010 | ................
+    40c0                              | @.
+TRACE +0.027 Read 1 bytes: c0
+TRACE +0.000 Read 17 bytes:
+    010602007fcf5c00 0000c0c04f484149 | ......\.....OHAI
+    c0                                | .
+TRACE +0.000 Received full packet: 010602007fcf5c000000
+TRACE +0.000 Received full packet: 4f484149
+Stub running...
+
+Erasing flash (this may take a while)...
+TRACE +0.000 command op=0xd0 data len=0 wait_response=1 timeout=120.000 data=
+TRACE +0.000 Write 10 bytes: c000d0000000000000c0
+TRACE +0.024 Read 1 bytes: c0
+TRACE +0.000 Read 8 bytes: 01d0020000000000
+TRACE +8.030 Read 1 bytes: 00
+TRACE +0.000 Read 2 bytes: 00c0
+TRACE +0.000 Received full packet: 01d00200000000000000
+Chip erase completed successfully in 8.1s
+Hard resetting via RTS pin...

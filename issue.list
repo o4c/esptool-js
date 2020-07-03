@@ -1,0 +1,24 @@
+事前準備
+1. 必須為https
+2. chrome://flags => #enable-experimental-web-platform-features
+
+
+解決：
+1. 過濾裝置 (vendorID、productID)
+
+可優化：
+1. esp.init的功能移植到建構子就行
+
+筆記：
+1. connect事件只偵測到配對的裝置，若拔掉則解除配對
+2. stub支援的功能
+  1. 更換baud rate
+  2. 燒錄有壓縮的韌體檔
+3. port.open呼叫時，serialport會重啟，導致Smart重開
+4. 在不送sync命令的情況下：
+  - 預設115200可以直接通訊(包含燒錄)，代表晶片預設是115200不是74800
+  - 第一筆資料至少要發送6Bytes以上（不會respond），第二筆資料才會respond
+5. 重整頁面或usb重新插拔需要重新連線配對
+
+問題：
+1. 重復選擇port時，port為undefined

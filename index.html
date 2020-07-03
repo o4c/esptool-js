@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>esptool Test</title>
+</head>
+
+<body>
+  <button id="getUSB">選擇USB</button>
+  <hr>
+  <button id="burnSmart">更新Smart韌體</button>
+  <button id="burnBit">更新Bit韌體</button>
+  <button id="eraseFw">清除韌體</button>
+  <!-- <button id="testMac">測試Mac</button>
+  <button id="testStub">測試Stub</button> -->
+  <!-- <hr>
+  <button id="test">測試WebSerial</button>
+  <button id="rston">rst ON</button>
+  <button id="rstoff">rst ff</button> -->
+</body>
+<script src="pako/dist/pako_deflate.js"></script>
+<script src="./slip.js"></script>
+<script src="./md5.js"></script>
+<script src="WebSerial.js"></script>
+<script src="esptool.js"></script>
+<script src="main.js"></script>
+<script>
+  // let test = document.getElementById('test')
+  // let rston = document.getElementById('rston')
+  // let rstoff = document.getElementById('rstoff')
+  // let port
+  // test.onclick = async () => {
+  //   let s = new WebSerial()
+  //   port = await s.connect({ baudrate: 115200 , rtscts: false})
+  //   port.setSignals({ rts: false})
+  // }
+  // rston.onclick = async () => {
+  //   // 等於Reset腳位接地
+  //   console.log("in reset") // 1 0 0 1
+  //   port.setSignals({ dtr: false, rts: true })
+  // }
+  // rstoff.onclick = async () => {
+  //    // 等於Reset空接
+  //   console.log("out reset") // 0 1 1 0
+  //   port.setSignals({ dtr: true, rts: false })
+  // }
+  
+
+</script>
+
+</html>
